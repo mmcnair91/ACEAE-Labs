@@ -166,7 +166,7 @@ With all the configuration files in place, you should now be able to use Fluidd/
  - Manually press the Z endstop switch
  - While holding it down send the ```QUERY_ENDSTOPS``` command again and make sure that the Z endstop says “triggered and the Y and X endstops stay open
  - If it is found that one of the endstops has inverted logic (i.e. it reads as “open” when it is pressed and “triggered” when not pressed), go into the printer configuration file (printer.cfg) and add or remove the "!" in front of the pin identifier. For example, if the X endstop was inverted, add a ! in front of the pin number as follows: ```enstop_pin: P1.28``` --> ```enstop_pin: !P1.28```
- - 
+   
 ### XY Homing Check Preflight
  - **You need to be able to quickly stop the printer in case something goes wrong (e.g. the toolhead goes in the wrong direction)**
  - Have a computer right next to the printer with the ```RESTART``` or ```M112``` command already in the console in Mainsail. When you start homing the printer, if it goes in the wrong direction, quickly send the restart command and it will stop the printer.
