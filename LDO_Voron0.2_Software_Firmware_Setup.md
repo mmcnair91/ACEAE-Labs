@@ -56,7 +56,7 @@ SSH into the printer using Putty (Windows) or terminal (Mac) using the IP addres
  ![windows_explorer_mounted_drive](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/0d19fa92-88b3-4767-acd8-26cd6abdf45d)
 
    - Copy the file you saved to your computer above (klipper.uf2) onto the SKR Pico just like you would any file to a flash drive. As soon as you copy the file over, the SKR Pico will reboot automatically and it will be flashed with Klipper
-   - Unplug the SKR Pico from the PC, remove any of the jumpers you added earlier, plug the USB into your Raspberry Pi, push the SKR Pico reset button, and check if it's been flashed properly by running the following command: ```ls /dev/serial/by-id
+   - Unplug the SKR Pico from the PC, remove any of the jumpers you added earlier, plug the USB into your Raspberry Pi, push the SKR Pico reset button, and check if it's been flashed properly by running the following command: ```ls /dev/serial/by-id```
    - If it has been flashed properly the result should be similar to the one in the image below but your USB-ID will be different, but should start with usb-Klipper-rp2040
 
 ![SKR_pico_by-id_output](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/dabf21a8-d357-4b06-a402-0bdd17f78232)
