@@ -29,6 +29,7 @@ SSH into the printer using Putty (Windows) or terminal (Mac) using the IP addres
   - Once git is installed, use the following command to download KIAUH into your home-directory: ```cd ~&& git clone https://github.com/dw-0/kiauh.git```
   - Start KIAUH by running this command: ```./kiauh/kiauh.sh```
   - You should now find yourself in the main menu of KIAUH. You will see several actions to choose from depending on what you want to do. To choose an action, simply type the corresponding number into the "Perform action" prompt and confirm by hitting ENTER.
+  - If prompted to install macros or additional things go ahead and select Yes
 
 ## Flashing firmware to the SKR Pico and Picobilical (based on instructions from [Voron Design](https://docs.vorondesign.com/build/software/skrPico_klipper.html) and [LDO](https://docs.ldomotors.com/en/voron/voron01/Picobilical#uploading-firmware))
  - Note: this is one of the more problematic steps in this process so pay close attention to instructions; I find this confusing because there are multiple instruction sources (LDO, Voron, Discords, etc.) and they all differ
@@ -143,6 +144,7 @@ With all the configuration files in place, you should now be able to use Fluidd/
  - To verify each stepper motor is operating correctly, send the following command in the console: ```STEPPER_BUZZ STEPPER=stepper_x```
  - This command causes the given stepper to move one millimeter in a positive direction and then return to its starting position and repeat these actions 10 times.
  - We will verify direction later, but ideally all motors will be running correctly at the end of this test
+ - We are not watching that the toolhead is moving when we issue these commands, but the pulley on the motors
  - See the table below for the expected motion for each command; run the command for each of the motors:
 
 |Motor    |Expectation                                                      |
@@ -151,3 +153,23 @@ With all the configuration files in place, you should now be able to use Fluidd/
 |stepper_y|The motor will rotate clockwise first, then back counterclockwise|
 |stepper_z|The bed moves down, then back up                                 |
 |extruder |Movement: Direction will be tested later                         |
+
+ - If the stepper does not move at all, then verify the ```enable_pin``` and ```step_pin``` settings for the stepper
+ - If the stepper motor moves but does not return to its original position then verify the ```dir_pin``` setting
+ - If the stepper motor oscillates in an incorrect direction, this generally indicates that the ```dir_pin``` for the axis needs to be inverted. This is done by adding a "!" to the ```dir_pin``` in the printer.cfg file (or removing it if one is already there)
+ - If the motor moves significantly more or significantly less than one millimeter, then verify the ```rotation_distance``` setting
+
+### Endstop Checks
+ - The beauty of an LDO kit is that their printer.cfg file already has sensorless homing set up for us on the X and Y and sensored homing on the Z!
+ - Make sure the bed is not pushing on the Z endstop
+ - In the console send a ```QUERY_ENDSTOPS``` command; the X, Y, and Z should all say "open"
+ - If any of them say “triggered” instead of “open”, double-check to make sure none of them are pressed
+ - Manually press the Z endstop switch
+ - While holding it down send the ```QUERY_ENDSTOPS``` command again and make sure that the Z endstop says “triggered and the Y and X endstops stay open
+ - If it is found that one of the endstops has inverted logic (i.e. it reads as “open” when it is pressed and “triggered” when not pressed), go into the printer configuration file (printer.cfg) and add or remove the "!" in front of the pin identifier. For example, if the X endstop was inverted, add a ! in front of the pin number as follows: ```enstop_pin: P1.28``` --> ```enstop_pin: !P1.28```
+### XY Homing Chack
+ - **You need to be able to quickly stop the printer in case something goes wrong (e.g. the toolhead goes in the wrong direction)**
+ - Have a computer right next to the printer with the ```RESTART``` or ```M112``` command already in the console in Mainsail. When you start homing the printer, if it goes in the wrong direction, quickly send the restart command and it will stop the printer.
+ - As a 'nuclear' option, power off the printer with the power switch if something goes wrong. This is not ideal because it may corrupt the files on the SD card and to recover would require reinstalling everything from scratch
+
+There are two ways to go about doing these checks: using the Mainsail Console or 
