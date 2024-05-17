@@ -118,3 +118,36 @@ These configuration files tell Klipper how our printer is wired. It also contain
 With all the configuration files in place, you should now be able to use Fluidd/Mainsail to perform basic controls on your 3D printer. However, there are still a few more steps you should follow before starting your first print.
   - Follow the [initial startup guide](https://docs.vorondesign.com/build/startup/) from Voron Design
   - Fine-tune sensorless homing by reading [this article](https://docs.vorondesign.com/community/howto/clee/sensorless_xy_homing.html) by clee (well known and respected member of the 3D printing community)
+
+## Initial Startup
+ - Issue a RESTART command after every change to the config file to ensure that the change takes effect ( type ```restart``` into the Mainsail terminal then click "send").
+ - It is also a good idea to issue a ```status``` command after every ```restart``` to verify that the config file is successfully loaded
+ - Any time commands are requested to be issued, those will happen in the ‘Console’ tab of Mainsail in the box for entering commands directly.
+
+![mainsail_terminal](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/95f50a4c-c856-49d3-a829-cf9d8bcd7c31)
+
+ - Any time movements need to be made, those will happen in the ‘Dashboard’ tab / section of the Mainsail web UI. The numbers underneath X, Y, and Z control the movement distance.
+
+![mainsail_controls](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/597b6a34-319d-4188-854e-72bb2b742dd9)
+
+### Verify Temperature
+ - Start by verifying that temperatures are being properly reported by navigating to the Mainsail temperature graph (in the Dashboard section)
+ - Verify that the temperature of the nozzle and bed are present and **not increasing**. If it is increasing, remove power from the printer. If the temperatures are not accurate, review the ```sensor_type``` and ```sensor_pin``` settings for the extruder and/or bed in the printer.cfg file
+
+### Verify Heaters
+ - In the temperature graph section, type in "50" followed by ENTER in the “Extruder” temperature target field. The extruder temperature in the graph should start to increase (within about 10 seconds or so)
+ - Go to the “Tool” temperature drop-down box and select “Off”/"0C". After several minutes the temperature should start to return to its initial room temperature value. If the temperature does not increase, then verify the ```heater_pin``` setting in the printer.cfg is correct
+ - Perform the above steps again with the bed
+
+### Stepper Motor Check
+ - To verify each stepper motor is operating correctly, send the following command in the console: ```STEPPER_BUZZ STEPPER=stepper_x```
+ - This command causes the given stepper to move one millimeter in a positive direction and then return to its starting position and repeat these actions 10 times.
+ - We will verify direction later, but ideally all motors will be running correctly at the end of this test
+ - See the table below for the expected motion for each command; run the command for each of the motors:
+
+|Motor    |Expectation                                                      |
+|---------|-----------------------------------------------------------------|
+|stepper_x|The motor will rotate clockwise first, then back counterclockwise|
+|stepper_y|The motor will rotate clockwise first, then back counterclockwise|
+|stepper_z|The bed moves down, then back up                                 |
+|extruder |Movement: Direction will be tested later                         |
