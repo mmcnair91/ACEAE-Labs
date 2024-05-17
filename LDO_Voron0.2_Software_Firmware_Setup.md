@@ -109,7 +109,7 @@ sudo service klipper start
 ## Klipper Configuration
 These configuration files tell Klipper how our printer is wired. It also contains other useful data like custom macros, tuning values, etc.
  - Open your printer's web interface (mainsail) by entering your Raspberry Pi's IP address in any browser. Initially you will see an error message indicating a missing "printer.cfg" file
- - We followed the LDO wiring guide during installation so we can use their [pre-made configuration files](https://github.com/MotorDynamicsLab/LDOVoron0/tree/v02/Firmware)
+ - We followed the LDO wiring guide during installation so we can use their [pre-made configuration files](https://github.com/MotorDynamicsLab/LDOVoron0/tree/v02/Firmware) they also have a [separate file for the Picobilical](https://github.com/MotorDynamicsLab/LDO-Picobilical/tree/master/Klipper_Configs)
  - Download the "printer.cfg" bile and upload it to Mainsail under the Machine (Wrench icon) by drag and dropping the file
  - Edit the printer.cfg file, under the ```[mcu]``` section, replace ```{REPLACE WITH YOUR SERIAL}``` with the SKR Pico USB-ID you obtained in the previous steps
  - Edit the printer.cfg file, under the ```[mcu umb]``` section, replace ```{REPLACE WITH YOUR SERIAL}``` with the Picobilical USB-ID you obtained in the previous steps
