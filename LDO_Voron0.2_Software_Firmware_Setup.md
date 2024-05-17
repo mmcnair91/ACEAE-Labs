@@ -210,3 +210,12 @@ There are two ways to go about doing these checks: using the Mainsail Console or
  -  [stepper y] = Motor A
 
 ![V0-motor-configuration-guide](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/ecb2200c-a897-4ca1-92b7-a8c66c28d939)
+
+### Z Endstop Location
+ - The Z endstop is located at the bottom of the machine at the end of the left linear rail
+ - After homing Z (```G28 Z``` or clicking the orange Z button in Mainsail's Toolhead Dashboard) you can use the ```Z_ENDSTOP_CALIBRATE``` command to find the correct position_endstop value automatically
+ - We will use a piece of copy paper to set the height of our nozzle relative to the endstop position, do this test with your nozzle cold. When the nozzle is heated, its position (relative to the bed) changes due to thermal expansion. This thermal expansion is typically around a 100 microns, which is about the same thickness as a typical piece of printer paper. The exact amount of thermal expansion isn’t crucial, just as the exact thickness of the paper isn’t crucial. Start with the assumption that the two are equal.
+ - Run the ```Z_ENDSTOP_CALIBRATE``` command, a dialog box will open that allows you to move the nozzle up and down by preset amounts
+ - Place a piece of copy paper under the nozzle and lower the nozzle in small increments, after each movement push the paper back and forth to check if the nozzle is in contact with the paper and to feel the amount of friction. Continue issuing commands until you feel a small amount of friction when testing with the paper. If too much friction is found then you can use a positive Z value to move the nozzle up.
+ - Once you have found the proper height click the ACCEPT button. You then need to issue the SAVE_CONFIG command to save the value to the bottom of your config file. This will restart Mainsail.
+ - This value that we just calculated is now in your config and it represents the distance from the point that the nozzle touches the bed surface to when the bed assembly triggers the z endstop switch. It also represents your maximum Z travel distance. **This value can be edited manually as well and should be adjusted if using a different kind of buildplate.**
