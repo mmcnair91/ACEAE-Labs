@@ -190,7 +190,7 @@ There are two ways to go about doing these checks: using the Mainsail Console or
 
 ![V0-motor-configuration-guide](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/ecb2200c-a897-4ca1-92b7-a8c66c28d939)
 
-###XY Homing Check (Mainsail Dashboard)
+### XY Homing Check (Mainsail Dashboard)
  - Once there is a tested process for stopping the printer in case of something going wrong, you can test X and Y movement
  - Note: you will need to test X AND Y before you can correctly determine what adjustments are needed
  - For the next few steps please refer to the image below
