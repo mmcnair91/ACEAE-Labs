@@ -266,3 +266,18 @@ gcode:
  - Run ```zup``` or ```zdown``` (or the associated ```SET_GCODE_OFFSET``` command) as needed in the terminal window until you have perfected your squish
  - Run ```GET_POSITION``` and look for "gcode base". *Note the Z value*
  - All of the above methods are “transient”. The changes are lost as soon as your printer restarts. Once you find an adjustment you are happy with, you may make it permanent, by applying it to the position_endstop in your config file: run the command ```Z_OFFSET_APPLY_ENDSTOP``` followed by ```SAVE_CONFIG```. This will restart your printer, with the adjustment permanently applied to the endstop position.
+
+## Extruder Calibration (e-steps)
+Before the first print, make sure that the extruder extrudes the correct amount of material.
+ - First, make sure the extruder is running the correct direction: heat the hotend, and extrude 10mm or so of filament:
+   - If the extruder pulls the filament in, all is well.
+   - If the filament gets pushed back out the top, reverse the extruder in your ```printer.cfg``` by finding the ```[extruder] dir_pin```, and adding a ```!``` to the pin name. (if one is already present, remove it instead)
+ - With the hotend at temperature, make a mark on the filament between the roll of filament and your extruder, between 120mm and 150mm away from the entrance to the extruder. Measure the distance from the entrance of the extruder to that mark.
+ - Set the extrusion speed to 1mm/s, and extrude 50mm 2 times (for a total of 100mm since Klipper doesn’t allow you to extrude more than 50mm at a time)
+ - Measure from the entrance of your extruder to the mark you made previously. In a perfect world, assuming the mark was at 120mm, it would measure 20mm (120mm - 20mm = 100mm), but usually won’t be.
+ - Update ```rotation_distance``` in the extruder section of the configuration file using this formula:
+   - New Config Value = Old Config Value * (Actual Extruded Amount/Target Extruded Amount)
+*Note: a higher configuration value means that less filament is being extruded.*
+ - Paste the new value into the configuration file, restart Klipper, and try again
+ - Once the extrusion amount is within 0.5% of the target value (ie, 99.5-100.5mm for a target 100mm of extruded filament), the extruder is calibrated!
+ - Typical rotation_distance values should be around 22.6789511 for Stealthburner (is this true for mini stealthburner as well?)
