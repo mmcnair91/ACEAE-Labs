@@ -254,7 +254,8 @@ You probably just completed this but if you wish to further refine it or need ad
  - With LCD Screen: The Z offset can be adjusted during a print using the Tune menu on the display, and the printer configuration can be updated with this new value. Remember that higher values for the position_endstop means that the nozzle will be closer to the bed.
  - Mainsail: The "babystepping" controls may be used to fine tune the z-offset
  - Create Macros in your ```printer.cfg``` file so the commands are easier to remember/run
-```[gcode_macro ZUP]
+```
+[gcode_macro ZUP]
 gcode:
     SET_GCODE_OFFSET Z_ADJUST=0.01 MOVE=1
 
