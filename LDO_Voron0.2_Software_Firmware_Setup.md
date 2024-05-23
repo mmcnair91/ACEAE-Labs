@@ -29,6 +29,7 @@ SSH into the printer using Putty (Windows) or terminal (Mac) using the IP addres
   - Once git is installed, use the following command to download KIAUH into your home-directory: ```cd ~&& git clone https://github.com/dw-0/kiauh.git```
   - Start KIAUH by running this command: ```./kiauh/kiauh.sh```
   - You should now find yourself in the main menu of KIAUH. You will see several actions to choose from depending on what you want to do. To choose an action, simply type the corresponding number into the "Perform action" prompt and confirm by hitting ENTER.
+  - Install Klipper, then moonraker, then Mainsail
   - If prompted to install macros or additional things go ahead and select Yes
 
 ## Flashing firmware to the SKR Pico and Picobilical (based on instructions from [Voron Design](https://docs.vorondesign.com/build/software/skrPico_klipper.html) and [LDO](https://docs.ldomotors.com/en/voron/voron01/Picobilical#uploading-firmware))
