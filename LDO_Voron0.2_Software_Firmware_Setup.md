@@ -289,3 +289,54 @@ Before the first print, make sure that the extruder extrudes the correct amount 
  - Paste the new value into the configuration file, restart Klipper, and try again
  - Once the extrusion amount is within 0.5% of the target value (ie, 99.5-100.5mm for a target 100mm of extruded filament), the extruder is calibrated!
  - Typical rotation_distance values should be around 22.6789511 for Stealthburner (is this true for mini stealthburner as well?)
+
+## Setting Up A Display
+There are multiple options for displays for the V0.2. The (LCD design by th0mpy)[https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display] is a great open source option and the (Waveshare 2.8" touchscreen display by hartk)[https://github.com/VoronDesign/VoronUsers/tree/main/printer_mods/hartk1213/Voron0.2_2.8_WaveshareDisplay] is another. Both options have been summarized below.
+
+### V0 LCD Display ((adapted from Mr Doctor Professor Patrick's Github)[https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display])
+ - There are tons of sources for this display, pretty much any of them are fine or you can even build it yourself! Just don't buy from Blurolls ((explanation why on the Voron Discord)[https://discord.com/channels/460117602945990666/696930677161197640/919787940807340072])
+ - My guide assumes the display has not had firmware flashed to it previously to avoid confusion
+ - Connect the board to the host Raspberry Pi via USB
+ - Connect to your host raspberry pi via SSH
+ - Run ```lsusb``` from the command prompt
+   ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/573e894b-267e-4e76-b37d-7d061f97dbfb)
+
+ - Make sure you see an ```STM32``` in DFU mode listed
+ -  - Write down the Device ID it will be in the format "xxxx:yyyy"
+   ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/6d99a8e3-3168-4aea-bd00-b9d8708fe18d)
+
+ - If you don't already see the Device ID, Run ```dfu-util --list``` from the command prompt
+   ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/ee2562e5-d8bf-473a-bea8-9816e7fa8b8d)
+
+ - Write down the Device ID
+   ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/6d99a8e3-3168-4aea-bd00-b9d8708fe18d)
+
+ - Run ```cd ~/klipper``` from the command line to enter the Klipper directory
+ - Run ```make menuconfig``` and adjust the following
+   - Micro-controller Architecture to ```STMicroelectronics STM32```
+   - Processor model ```STM32F042```
+   - Bootloader offset ```No bootloader```
+   - Clock Reference ```Internal Clock```
+   - Communication interface ```USB (on PA9/PA10))```
+  - Set the "Optional features" to:
+![Menuconfig_Optional_Options](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/6bdc7830-f5f2-4e50-bc12-f10ecbd51aa8)
+
+ - If there additional options leave them unsupported (unchecked)
+ - Hit Q to Exit and Save the settings when prompted
+ - Run ```make clean``` to clean up the make environment
+ - Run ```make flash FLASH_DEVICE=xxxx:yyyy``` (using xxxx:yyyy from above)
+ - You may see what appears to be an "error" after flashing your board. (Blue box)
+As long as you see the File downloded successfully text (Green box) you are good to proceed.
+The error (Red box) seems to be caused by the controller immediately running the uploaded code and no longer appearing as a DFU device. This is not an issue, as long as the board reports a Klipper serial name. 
+
+![dfu-util_Flashing_Error](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/637b603b-785c-4c88-a976-68beffb6b27f)
+
+ - Remove the boot jumper and unplug the USB cord from the Raspberry Pi then plug it back in
+ - Run ```ls /dev/serial/by-id/*``` should return a device begining with ```/dev/serial/by-id/usb-Klipper_stm32f042x6...```
+ - Copy this serial port name (/dev/serial/by-id/usb-Klipper_stm32f042x6... )and place it in your [mcu display] section of the (display config file (download here))[https://github.com/VoronDesign/Voron-Hardware/blob/master/V0_Display/Software/V0Display.cfg]
+ - Make sure to include the full path to the file just like in your ```printer.cfg``` file earlier when mapping the skr pico and picobilical
+ - In Mainsail, upload the V0Display.cfg file under the Machine menu (Wrench icon) by drag and dropping the file
+ - Add ```[include V0Display.cfg]``` to ```printer.cfg``` to include the file
+   ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/153e063a-0a69-4f9b-8005-7571a67b4484)
+
+ - Restart the Firmware and the display should be functional!
