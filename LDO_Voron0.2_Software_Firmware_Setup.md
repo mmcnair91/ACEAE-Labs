@@ -291,10 +291,10 @@ Before the first print, make sure that the extruder extrudes the correct amount 
  - Typical rotation_distance values should be around 22.6789511 for Stealthburner (is this true for mini stealthburner as well?)
 
 ## Setting Up A Display
-There are multiple options for displays for the V0.2. The (LCD design by th0mpy)[https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display] is a great open source option and the (Waveshare 2.8" touchscreen display by hartk)[https://github.com/VoronDesign/VoronUsers/tree/main/printer_mods/hartk1213/Voron0.2_2.8_WaveshareDisplay] is another. Both options have been summarized below.
+There are multiple options for displays for the V0.2. The [LCD design by th0mpy](https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display) is a great open source option and the [Waveshare 2.8" touchscreen display by hartk](https://github.com/VoronDesign/VoronUsers/tree/main/printer_mods/hartk1213/Voron0.2_2.8_WaveshareDisplay) is another. Both options have been summarized below.
 
 ### V0 LCD Display ([adapted from Mr Doctor Professor Patrick's Github](https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display))
- - There are tons of sources for this display, pretty much any of them are fine or you can even build it yourself! Just don't buy from Blurolls ((explanation why on the Voron Discord)[https://discord.com/channels/460117602945990666/696930677161197640/919787940807340072])
+ - There are tons of sources for this display, pretty much any of them are fine or you can even build it yourself! Just don't buy from Blurolls ([explanation why on the Voron Discord](https://discord.com/channels/460117602945990666/696930677161197640/919787940807340072))
  - My guide assumes the display has not had firmware flashed to it previously to avoid confusion
  - Connect the board to the host Raspberry Pi via USB
  - Connect to your host raspberry pi via SSH
@@ -309,8 +309,6 @@ There are multiple options for displays for the V0.2. The (LCD design by th0mpy)
    ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/ee2562e5-d8bf-473a-bea8-9816e7fa8b8d)
 
  - Write down the Device ID
-   ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/6d99a8e3-3168-4aea-bd00-b9d8708fe18d)
-
  - Run ```cd ~/klipper``` from the command line to enter the Klipper directory
  - Run ```make menuconfig``` and adjust the following
    - Micro-controller Architecture to ```STMicroelectronics STM32```
