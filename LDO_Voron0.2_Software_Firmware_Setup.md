@@ -331,7 +331,7 @@ The error (Red box) seems to be caused by the controller immediately running the
 
  - Remove the boot jumper and unplug the USB cord from the Raspberry Pi then plug it back in
  - Run ```ls /dev/serial/by-id/*``` should return a device begining with ```/dev/serial/by-id/usb-Klipper_stm32f042x6...```
- - Copy this serial port name (/dev/serial/by-id/usb-Klipper_stm32f042x6... )and place it in your [mcu display] section of the (display config file (download here))[https://github.com/VoronDesign/Voron-Hardware/blob/master/V0_Display/Software/V0Display.cfg]
+ - Copy this serial port name (/dev/serial/by-id/usb-Klipper_stm32f042x6... )and place it in your [mcu display] section of the [display config file (download here)](https://github.com/VoronDesign/Voron-Hardware/blob/master/V0_Display/Software/V0Display.cfg)
  - Make sure to include the full path to the file just like in your ```printer.cfg``` file earlier when mapping the skr pico and picobilical
  - In Mainsail, upload the V0Display.cfg file under the Machine menu (Wrench icon) by drag and dropping the file
  - Add ```[include V0Display.cfg]``` to ```printer.cfg``` to include the file
