@@ -293,7 +293,7 @@ Before the first print, make sure that the extruder extrudes the correct amount 
 ## Setting Up A Display
 There are multiple options for displays for the V0.2. The (LCD design by th0mpy)[https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display] is a great open source option and the (Waveshare 2.8" touchscreen display by hartk)[https://github.com/VoronDesign/VoronUsers/tree/main/printer_mods/hartk1213/Voron0.2_2.8_WaveshareDisplay] is another. Both options have been summarized below.
 
-### V0 LCD Display ((adapted from Mr Doctor Professor Patrick's Github)[https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display])
+### V0 LCD Display ([adapted from Mr Doctor Professor Patrick's Github](https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display))
  - There are tons of sources for this display, pretty much any of them are fine or you can even build it yourself! Just don't buy from Blurolls ((explanation why on the Voron Discord)[https://discord.com/channels/460117602945990666/696930677161197640/919787940807340072])
  - My guide assumes the display has not had firmware flashed to it previously to avoid confusion
  - Connect the board to the host Raspberry Pi via USB
