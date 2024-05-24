@@ -288,7 +288,7 @@ Before the first print, make sure that the extruder extrudes the correct amount 
 *Note: a higher configuration value means that less filament is being extruded.*
  - Paste the new value into the configuration file, restart Klipper, and try again
  - Once the extrusion amount is within 0.5% of the target value (ie, 99.5-100.5mm for a target 100mm of extruded filament), the extruder is calibrated!
- - Typical rotation_distance values should be around 22.6789511 for Stealthburner (is this true for mini stealthburner as well?)
+ - Typical rotation_distance values should be around 22.6789511 for Mini Stealthburner
 
 ## Setting Up A Display
 There are multiple options for displays for the V0.2. The [LCD design by th0mpy](https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display) is a great open source option and the [Waveshare 2.8" touchscreen display by hartk](https://github.com/VoronDesign/VoronUsers/tree/main/printer_mods/hartk1213/Voron0.2_2.8_WaveshareDisplay) is another. Both options have been summarized below.
