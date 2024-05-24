@@ -116,6 +116,8 @@ These configuration files tell Klipper how our printer is wired. It also contain
  - Download the "printer.cfg" file and upload it to Mainsail under the Machine (Wrench icon) by drag and dropping the file
  - Edit the printer.cfg file, under the ```[mcu]``` section, replace ```{REPLACE WITH YOUR SERIAL}``` with the SKR Pico USB-ID you obtained in the previous steps
  - Edit the printer.cfg file, under the ```[mcu umb]``` section, replace ```{REPLACE WITH YOUR SERIAL}``` with the Picobilical USB-ID you obtained in the previous steps
+ - Edit the printer.cfg file, so that the Mainsail.cfg file is included by deleting the "#" before ```[include mainsail.cfg]``` ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/78744348-d9bf-48c8-a6ee-425d5b1b21a9)
+
  - FINAL WARNING: **DO NOT** mix up the USB-ID serial paths for the SKR Pico and Picobilical, doing so can result in unintended damage to your printer or mainboard
 
 With all the configuration files in place, you should now be able to use Fluidd/Mainsail to perform basic controls on your 3D printer. However, there are still a few more steps you should follow before starting your first print.
@@ -223,13 +225,12 @@ There are two ways to go about doing these checks: using the Mainsail Console or
  - This value that we just calculated is now in your config and it represents the distance from the point that the nozzle touches the bed surface to when the bed assembly triggers the z endstop switch. It also represents your maximum Z travel distance.
  - **This value can be edited manually as well and should be adjusted if using a different kind of buildplate and after bed leveling.**
    
-# This is where I stopped my current setup
-
 ## PID Tune Bed & Hotend
 The PID tune is important for tuning the printer for a given hardware configuration to ensure that temperatures can remain as stable as possible during operation.
  - Move the nozzle to the center of the bed and approximately 5-10mm above the bed surface
  - Run: ```PID_CALIBRATE HEATER=heater_bed TARGET=100```
- - This performs a PID calibration routine that will last about 10 minutes. Once finished, type ```SAVE_CONFIG``` which will save the parameters to the ```printer.cfg``` file
+ - This performs a PID calibration routine that will last about 10-15 minutes. The console will not display anything while it is working but you can monitor the progress via the Dashboard temperature graph.
+ -  Once finished, type ```SAVE_CONFIG``` which will save the parameters to the ```printer.cfg``` file
  - Set the part cooling fans to 25% in the dashboard or use ```M106 S64``` in the console
  - Run: ```PID_CALIBRATE HEATER=extruder TARGET=245```
  - This performs a PID calibration routine that will last about 5 minutes. Once finished, type ```SAVE_CONFIG``` which will save the parameters to the ```printer.cfg``` file
