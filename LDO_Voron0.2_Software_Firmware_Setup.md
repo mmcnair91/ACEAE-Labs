@@ -77,6 +77,11 @@ SSH into the printer using Putty (Windows) or terminal (Mac) using the IP addres
 ***Write down the USB-ID for the SKR Pico and make sure you denote that it is for the SKR Pico; confusing this USB-ID with the Picobilical USB-ID can result in unintended damage to your printer or mainboard***
 
 ### Flashing the firmware to the Picobilical
+Preparing the Picobilical
+ - Install the fan voltage jumpers (green things top right corner) corresponding to the rated voltage of your hotend (HEF) and part fans (PCF). In the photo shown below, the hotend fan is set to 5V while the part fan is set to 24V.  These kits comes with all 24v fans, so set both jumpers to 24v by placing the jumpers on the leftmost and middle pins.
+ - Please double check the sticker on the fan to make sure you have 24v fans otherwise it will damage the fan.
+ - ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/c95ec0a0-cde8-4998-96af-c2b01625eb0f)
+
 There are two methods for uploading the firmware: 
 - UF2 Bootloader Mode (when no klipper firmware was previously installed)
 - Klipper Make (if you already have klipper installed on the Picobilical)
