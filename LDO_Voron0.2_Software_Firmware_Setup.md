@@ -293,6 +293,26 @@ Before the first print, make sure that the extruder extrudes the correct amount 
 ## Setting Up A Display
 There are multiple options for displays for the V0.2. The [LCD design by th0mpy](https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display) is a great open source option and the [Waveshare 2.8" touchscreen display by hartk](https://github.com/VoronDesign/VoronUsers/tree/main/printer_mods/hartk1213/Voron0.2_2.8_WaveshareDisplay) is another. Both options have been summarized below.
 
+### V0 2.8" Waveshare Display (based on the [Waveshare installation instructions](https://www.waveshare.com/wiki/2.8inch_DSI_LCD) and [hartk's instructions](https://github.com/VoronDesign/VoronUsers/tree/main/printer_mods/hartk1213/Voron0.2_2.8_WaveshareDisplay))
+ - SSH into the Raspberry Pi
+ - Download and enter the Waveshare-DSI-LCD driver folder
+```
+git clone https://github.com/waveshare/Waveshare-DSI-LCD
+cd Waveshare-DSI-LCD
+```
+
+ - Enter ```uname -a``` to view the kernel version of your Raspberry Pi; NOTE: waveshare screens may not be up to the latest version of your Raspberry Pi (and that's okay as long as the first two numbers and the first digit of the third number match)
+ - ```cd``` to the corresponding file directory (e.g. ```cd 6.6.20```)
+ - We know we set up our Raspberry Pi as a 32-bit system when we first flashed the operating system, so enter the ```32``` directory for 32-bit systems via ```cd 32```
+ - Enter your corresponding model command to install the driver, pay attention to the selection of the I2C DIP switch
+#2.8inch DSI LCD 480×640：```sudo bash ./WS_xinchDSI_MAIN.sh 28 I2C0```
+ - Wait for a few seconds, when the driver installation is complete and no error is prompted, restart and load the DSI driver and it can be used normally by entering: ```sudo reboot```
+ - make sure everything is fully up to date on your raspberry pi by running
+```
+sudo apt-get update
+sudo apt-get full-upgrade
+```
+
 ### V0 LCD Display ([adapted from Mr Doctor Professor Patrick's Github](https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display))
  - There are tons of sources for this display, pretty much any of them are fine or you can even build it yourself! Just don't buy from Blurolls ([explanation why on the Voron Discord](https://discord.com/channels/460117602945990666/696930677161197640/919787940807340072))
  - My guide assumes the display has not had firmware flashed to it previously to avoid confusion
