@@ -394,7 +394,7 @@ The V0.2 is a great travel printer, but getting it connected to different Wifi n
 ## Printer already connected to a network
 There are two ways to go about this depending on if the new network you want to connect to is within range of the printer or not
 
-### Within Range
+### Within range of the new network
  - SSH into your printer
  - Run ```sudo raspi-config```
  - Press "Enter" to select "System Options"
@@ -405,13 +405,11 @@ There are two ways to go about this depending on if the new network you want to 
  - Check to make sure you are connected to the network by running the ```ifconfig``` command which should display something like this
 ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/43cdb363-2b9d-4ff3-94f4-2fd8844d604e)
 
-### Out of Range of the New Network
- - Requires a screen to connect to the Rasbperry Pi (via HDMI (pi3) or mini HDMI (pi4) and a USB Keyboard)
- - Plug the Raspberry Pi into the display screen
- - Plug the keyboard into the Raspberry Pi
- - Turn on the Printer and wait for the command line to finish loading
- - Run ```cd /etc/NetworkManager/system-connections/```
- - Create the file for your network using ```sudo cp preconfigured.nmconnection "Your Network SSID.nmconnection ``` replacing the "Your Network SSID" portion with the exact name of your network
+### Out of range of the new network
+ - SSH into your printer
+ - Run ```cd /etc/NetworkManager/system-connections/ && ls```
+ - Create the file for your network using the following command but replace the "Current Network Name" and "New Network SSID" portions as needed
+```sudo cp "Current Network Name".nmconnection "New Network SSID.nmconnection ```
  - Adjust the following lines :
 ```
 id="Your Network SSID"
@@ -421,4 +419,34 @@ psk="Your Network Password"
  - Here is a sample version with the network name being "BubbaGumpShrimpComp" and the Password being "SuperSecretPassword"
 ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/8575d6de-19a7-4b23-aa44-9a86bee70385)
 
-## Printer is not connected to a network (and the new network is within range of the printer)
+## Printer is not connected to a network
+### Within range of the new network
+ - Requires a screen to connect to the Rasbperry Pi (via HDMI (pi3) or mini HDMI (pi4) and a USB Keyboard)
+ - Plug the Raspberry Pi into the display screen
+ - Plug the keyboard into the Raspberry Pi
+ - Turn on the Printer and wait for the command line to finish loading
+ - Run ```sudo raspi-config```
+ - Press "Enter" to select "System Options"
+ - Press "Enter" to select "S1 Wireless LAN"
+ - Type in the SSID (network name) of your network then press "Enter"
+ - Type in the password for your network then press "Enter"
+ - If successful, navigate to the following directory ```cd /etc/NetworkManager/system-connections/``` and run the ```ls``` command and a file with called ```"Your Network SSID".nmconnection``` should be there
+ - Check to make sure you are connected to the network by running the ```ifconfig``` command which should display something like this
+![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/43cdb363-2b9d-4ff3-94f4-2fd8844d604e)
+
+### Out of range of the new network
+ - Requires a screen to connect to the Rasbperry Pi (via HDMI (pi3) or mini HDMI (pi4) and a USB Keyboard)
+ - Plug the Raspberry Pi into the display screen
+ - Plug the keyboard into the Raspberry Pi
+ - Turn on the Printer and wait for the command line to finish loading
+ - Run ```cd /etc/NetworkManager/system-connections/ && ls```
+ - You should see a file named something like "preconfigured.nmconnection"
+ - Create the file for your network using the following command but replace the "Current Network Name" and "New Network SSID" portions as needed ```sudo cp "Current Network Name".nmconnection "New Network SSID.nmconnection ```
+ - Adjust the following lines :
+```
+id="Your Network SSID"
+ssid="Your Network SSID"
+psk="Your Network Password"
+```
+ - Here is a sample version with the network name being "BubbaGumpShrimpComp" and the Password being "SuperSecretPassword"
+![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/8575d6de-19a7-4b23-aa44-9a86bee70385)
