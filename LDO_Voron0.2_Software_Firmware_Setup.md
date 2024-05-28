@@ -288,11 +288,12 @@ Before the first print, make sure that the extruder extrudes the correct amount 
 *Note: a higher configuration value means that less filament is being extruded.*
  - Paste the new value into the configuration file, restart Klipper, and try again
  - Once the extrusion amount is within 0.5% of the target value (ie, 99.5-100.5mm for a target 100mm of extruded filament), the extruder is calibrated!
- - Typical rotation_distance values should be around 22.6789511 for Mini Stealthburner
+ - Typical rotation_distance values should be around 22.7 for Mini Stealthburner
 
 ## Setting Up A Display
 There are multiple options for displays for the V0.2. The [LCD design by th0mpy](https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display) is a great open source option and the [Waveshare 2.8" touchscreen display by hartk](https://github.com/VoronDesign/VoronUsers/tree/main/printer_mods/hartk1213/Voron0.2_2.8_WaveshareDisplay) is another. Both options have been summarized below.
 
+# ******THIS SECTION IS STILL UNDER CONSTRUCTION DO NOT USE******
 ### V0 2.8" Waveshare Display (based on the [Waveshare installation instructions](https://www.waveshare.com/wiki/2.8inch_DSI_LCD) and [hartk's instructions](https://github.com/VoronDesign/VoronUsers/tree/main/printer_mods/hartk1213/Voron0.2_2.8_WaveshareDisplay))
  - SSH into the Raspberry Pi
  - Download and enter the Waveshare-DSI-LCD driver folder
@@ -312,6 +313,34 @@ cd Waveshare-DSI-LCD
 sudo apt-get update
 sudo apt-get full-upgrade
 ```
+ - After the drivers are installed run the following command to open up the config.txt for the raspberry pi ```sudo nano /boot/firmware/config.txt```
+ - During driver installation above you added this line:
+```dtoverlay=WS_xinchDSI_Touch,invertedy,swappedxy,I2C_bus=10```
+which needs to be updated to this:
+```dtoverlay=WS_xinchDSI_Touch,invertedy,invertedx,I2C_bus=10```
+ - Save and exit the config.txt file by pressing ```control+x``` and then ```y```
+ - Go to this directory by ```cd /usr/share/X11/xorg.conf.d/``` and run
+```git clone https://github.com/VoronDesign/VoronUsers/blob/main/printer_mods/hartk1213/Voron0.2_2.8_WaveshareDisplay/Software/90-monitor.conf```
+ - if this command fails, you'll have to either copy the file to the directory using something like WinSCP to drag and drop the file into the directory OR you can make it yourself (directions follow)
+ - Run ```sudo nano 90-monitor.conf``` which creates the file and opens the "nano" text editor
+ - Copy the following into the file (if using Putty you can right click)
+```
+Section "Monitor"
+    Identifier "DSI-1"
+    # This identifier would be the same as the name of the connector printed by$
+    # it can be "HDMI-0" "DisplayPort-0", "DSI-0", "DVI-0", "DPI-0" etc
+
+    Option "Rotate" "left"
+    # Valid rotation options are normal,inverted,left,right
+
+
+    Option "PreferredMode" "640x480"
+    # May be necesary if you are not getting your prefered resolution.
+EndSection
+```
+ - Save and exit the config.txt file by pressing ```control+x``` and then ```y```
+
+# ******END CONSTRUCTION SECTION THE INSTRUCTIONS BELOW WORK FINE******
 
 ### V0 LCD Display ([adapted from Mr Doctor Professor Patrick's Github](https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display))
  - There are tons of sources for this display, pretty much any of them are fine or you can even build it yourself! Just don't buy from Blurolls ([explanation why on the Voron Discord](https://discord.com/channels/460117602945990666/696930677161197640/919787940807340072))
