@@ -515,6 +515,9 @@ probe_points:
 ```
  - It is advised to start with 1 probe point, in the middle of the print bed, slightly above it then restart the Printer Firmware in Mainsail
  - Check your setup by running the command ```ACCELEROMETER_QUERY``` in Mainsail. If everything is correct, you should see some measurements from the accelerometer on the console output
- -
+
  ### Input Shaper Calibration
-  - The easiest way to perform calibration is to simply run the command ```SHAPER_CALIBRATE``` in Mainsail. For more details and advanced commands and settings see [Klipper . 
+  - The easiest way to perform calibration is to simply run the command ```SHAPER_CALIBRATE``` in Mainsail. For more details and advanced commands and settings see [Klipper Documentation](https://www.klipper3d.org/Measuring_Resonances.html#input-shaper-auto-calibration)
+ - This process takes ~5 minutes and at the end of it you will be prompted to run ```SAVE_CONFIG``` which will save the input shaper settings to your printer.cfg file an restart your firmware
+ - You can now unplug the ribbon cable from the Raspberry Pi and the Toolhead PCB
+ - Congrats! You have completed tuning your input shaping!
