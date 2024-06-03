@@ -450,3 +450,71 @@ psk="Your Network Password"
 ```
  - Here is a sample version with the network name being "BubbaGumpShrimpComp" and the Password being "SuperSecretPassword"
 ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/8575d6de-19a7-4b23-aa44-9a86bee70385)
+
+# Input Shaping
+Configuring Input Shaping allows you to print at much higher speeds by compensating for vibrations caused by the movement of the toolhead. 
+ - This is a great video demonstrating [how input shaping works in a large scale system](https://www.youtube.com/watch?v=gzBhTrHv0-c)
+ - This is a ;tldr style explanation I found on Reddit:
+> Rapid printer movements create vibrations. This means that the printer is trying to make a movement, but because physics exists it'll actually wobble while doing so. This is visible in the printed object, and people really don't like it. The easiest way to avoid this is to slow down your printer. Alternatively, you can do input shaping [...] means the printer knows how much it is going to wobble, so it can take the original input and slightly modify it in such a way that the wobbles are countered! This allows you to speed up the print without getting ugly wobble artifacts.
+
+Basically, it allows you to print faster without causing defects in the objects you print! Again this is specifically for the LDO Voron 0.2s1r1 kit with Raspberry Pi, SKR Pico, and Picobilical boards. These instructions are adapted from the [LDO Documentation](https://docs.ldomotors.com/adxl_tool) and the [Klipper Documentation](https://www.klipper3d.org/Measuring_Resonances.html).
+
+## Setting Up Input Shaping
+
+### Hardware Setup
+ - Connect the FFC ribbon cable to each PCB (Raspberry Pi & Toolhead PCB)
+    - Carefully pull up the black tab on the FFC connector
+    - Insert the FFC ribbon cable and push the tab back in
+    - Take care when pulling up the black tab! It is fragile and will break if pulled with excessive force
+    - Make sure the polarity of the ribbon cable is correct
+    - The ribbon cable is **NOT** to be run in cable chains and should be connected directly for input shaping and removed afterwards
+    - Be sure the ribbon cable is facing the right direction during installation:
+   ![20240603_142606](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/e986f768-7068-4f7a-9de4-546ba5b3fb1a)
+   ![20240603_142600](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/a2a958ad-7b09-43bb-8690-40be42ac291b)
+
+ ### Software Setup
+  - Before you can start running input shaper calibration, you need to install a few software packages on your Raspberry Pi
+  - SSH into your printer
+  - Run the following to install the rc script which allows you to use the host as a secondary MCU:
+```
+cd ~/klipper/
+sudo cp ./scripts/klipper-mcu.service /etc/systemd/system/
+sudo systemctl enable klipper-mcu.service
+```
+ - Compile the Klipper micro-controller code, by configuring for the "Linux process":
+```
+cd ~/klipper/
+make menuconfig
+```
+ - Set the "Microcontroller Architecture" to "Linux Process" then save and exit
+ - Build and install the new micro-controller code by running:
+```
+sudo service klipper stop
+make flash
+sudo service klipper start
+```
+ - If klippy.log reports a "Permission denied" error when attempting to connect to ```/tmp/klipper_host_mcu``` then you need to add your user to the tty group. The following command will add the "pi" user to the tty group ```sudo usermod -a -G tty pi```
+ - Run ``` sudo raspi-config``` and enable SPI under the "Interfacing Options" menu
+ - Run
+```sudo apt update
+sudo apt install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev
+```
+ - Then run: ```~/klippy-env/bin/pip install -v numpy```
+ - Add the following to the ```printer.cfg``` file:
+```
+[mcu rpi]
+serial: /tmp/klipper_host_mcu
+
+[adxl345]
+cs_pin: rpi:None
+
+[resonance_tester]
+accel_chip: adxl345
+probe_points:
+    60, 60, 20  # an example
+```
+ - It is advised to start with 1 probe point, in the middle of the print bed, slightly above it then restart the Printer Firmware in Mainsail
+ - Check your setup by running the command ```ACCELEROMETER_QUERY``` in Mainsail. If everything is correct, you should see some measurements from the accelerometer on the console output
+ -
+ ### Input Shaper Calibration
+  - The easiest way to perform calibration is to simply run the command ```SHAPER_CALIBRATE``` in Mainsail. For more details and advanced commands and settings see [Klipper . 
