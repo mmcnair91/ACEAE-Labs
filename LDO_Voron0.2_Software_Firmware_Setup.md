@@ -451,7 +451,7 @@ psk="Your Network Password"
  - Here is a sample version with the network name being "BubbaGumpShrimpComp" and the Password being "SuperSecretPassword"
 ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/8575d6de-19a7-4b23-aa44-9a86bee70385)
 
-# Input Shaping
+# Input Shaping (optional but recommended)
 Configuring Input Shaping allows you to print at much higher speeds by compensating for vibrations caused by the movement of the toolhead. 
  - This is a great video demonstrating [how input shaping works in a large scale system](https://www.youtube.com/watch?v=gzBhTrHv0-c)
  - This is a ;tldr style explanation I found on Reddit:
@@ -521,3 +521,21 @@ probe_points:
  - This process takes ~5 minutes and at the end of it you will be prompted to run ```SAVE_CONFIG``` which will save the input shaper settings to your printer.cfg file an restart your firmware
  - You can now unplug the ribbon cable from the Raspberry Pi and the Toolhead PCB
  - Congrats! You have completed tuning your input shaping!
+
+# Raspberry Pi Camera Installation & Setup (optional)
+Installing a camera provides multiple advantages for your 3D printing experience. It can be used to monitor ongoing prints, record timelapse videos, and more. For this guide we'll be using an interface called Crowsnest and an official Raspberry Pi V2.1 camera. You'll need a 15 pin ribbon cable that is ~12" or longer, the camera unit, an m3 bolt (most mounts use 12-18mm lengths), and an m3 hexnut.
+
+## Hardware Installation
+
+Multiple options for mounting the camera are out there here are a few that I like:
+ - 
+
+ - Plug the ribbon cable into the Pi Camera making sure the contacts are facing towards the camera lens
+![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/d9f5d130-b3b4-4c39-80c9-1751e388ea25)
+ - Screw the camera into the 3D printed mount (if required) using m2 self-tapping screws
+ - Screw the m3 bolt (12-18mm) through the mount and begin the threading it into the m3 hexnut
+ - Gently let the camera and mount hang and slip the ribbon cable between the back panel and the horizontal extrusion 
+ - Plug the ribbon cable into the Raspberry Pi camera port with the contacts facing towards the hdmi/mini hdmi port
+ - Install the mounted camera into the proper extrusion and tighten the m3 bolt to properly secure the camera
+
+   
