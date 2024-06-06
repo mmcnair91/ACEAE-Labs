@@ -526,16 +526,26 @@ probe_points:
 Installing a camera provides multiple advantages for your 3D printing experience. It can be used to monitor ongoing prints, record timelapse videos, and more. For this guide we'll be using an interface called Crowsnest and an official Raspberry Pi V2.1 camera. You'll need a 15 pin ribbon cable that is ~12" or longer, the camera unit, an m3 bolt (most mounts use 12-18mm lengths), and an m3 hexnut.
 
 ## Hardware Installation
-
+### Mount Options
 Multiple options for mounting the camera are out there here are a few that I like:
- - 
-
+ - [For RPi V2 but there are multiple remixes for other cameras like Arducams](https://www.printables.com/model/146877-voron-0-voron-01-raspberry-pi-camera-mount)
+ - [Corner Mount](https://www.printables.com/model/149493-voron-v01-raspberry-pi-camera-module-bracket)
+ - [Between Z extrusions mount](https://www.printables.com/model/370373-voron-01-voron-02-raspberry-pi-camera-module-3-mou)
+### Installation
  - Plug the ribbon cable into the Pi Camera making sure the contacts are facing towards the camera lens
 ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/d9f5d130-b3b4-4c39-80c9-1751e388ea25)
  - Screw the camera into the 3D printed mount (if required) using m2 self-tapping screws
- - Screw the m3 bolt (12-18mm) through the mount and begin the threading it into the m3 hexnut
+ - (if applicable) Screw the m3 bolt (12-18mm) through the mount and begin the threading it into the m3 hexnut
  - Gently let the camera and mount hang and slip the ribbon cable between the back panel and the horizontal extrusion 
  - Plug the ribbon cable into the Raspberry Pi camera port with the contacts facing towards the hdmi/mini hdmi port
- - Install the mounted camera into the proper extrusion and tighten the m3 bolt to properly secure the camera
+![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/12ba8a46-3070-42b2-ad64-bee36b5cd553)
+ - Install the mounted camera into the proper extrusion and (if applicable) tighten the m3 bolt to properly secure the camera
 
+## Setup
+ - SSH to your Raspberry Pi 
+ - Use KIAUH to install Crowsnest by using the following command. ```./kiauh/kiauh.sh```
+ - Install Crowsnest using KIAUH; to choose an action, simply type the corresponding number into the "Perform action" prompt and confirm by hitting ENTER
+ - Crowsnest installation may take a few minutes to complete, if it prompts you for any decisions like asking for configuring the update manager in moonraker.conf; Select Yes and proceed with installation.
+ - At the end of the installation, you can see a message indicating the process's success.
+ - Do a hard restart of the entire printer (flip the power switch on the back), wait ~30seconds, then turn it back on
    
