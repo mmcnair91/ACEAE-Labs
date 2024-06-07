@@ -64,7 +64,7 @@ SSH into the printer using Putty (Windows) or terminal (Mac) using the IP addres
 ![SKR_pico_by-id_output](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/dabf21a8-d357-4b06-a402-0bdd17f78232)
 
 **Raspberry Pi Method**
-   - Note: If the Pcio is not powered with 12-24V (via your printer's power supply) Klipper will be unable to communicate with the TMC drivers and the SKR Pico will automatically shut down
+   - Note: If the Pico is not powered with 12-24V (via your printer's power supply) Klipper will be unable to communicate with the TMC drivers and the SKR Pico will automatically shut down
    - With the SKR Pico plugged into the Pi via USB-C and the boot jumper installed, press the reset button
    - Mount the SKR Pico to the Raspberry Pi to copy the file (klipper.uf2) over
    - Run the following commands: ```sudo mount /dev/sda1 /mnt`` then ```sudo cp out/klipper.uf2 /mnt``` then ```sudo umount /mnt```
@@ -273,7 +273,7 @@ gcode:
 ```
  - Run ```zup``` or ```zdown``` (or the associated ```SET_GCODE_OFFSET``` command) as needed in the terminal window until you have perfected your squish
  - Run ```GET_POSITION``` and look for "gcode base". *Note the Z value*
- - All of the above methods are “transient”. The changes are lost as soon as your printer restarts. Once you find an adjustment you are happy with, you may make it permanent, by applying it to the position_endstop in your config file: run the command ```Z_OFFSET_APPLY_ENDSTOP``` followed by ```SAVE_CONFIG```. This will restart your printer, with the adjustment permanently applied to the endstop position.
+*** - All of the above methods are “transient”. The changes are lost as soon as your printer restarts. Once you find an adjustment you are happy with, you may make it permanent, by applying it to the position_endstop in your config file: run the command ```Z_OFFSET_APPLY_ENDSTOP``` followed by ```SAVE_CONFIG```. This will restart your printer, with the adjustment permanently applied to the endstop position. ***
 
 ## Extruder Calibration (e-steps)
 Before the first print, make sure that the extruder extrudes the correct amount of material.
@@ -541,11 +541,39 @@ Multiple options for mounting the camera are out there here are a few that I lik
 ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/12ba8a46-3070-42b2-ad64-bee36b5cd553)
  - Install the mounted camera into the proper extrusion and (if applicable) tighten the m3 bolt to properly secure the camera
 
-## Setup
- - SSH to your Raspberry Pi 
+## Setup ([based on the official Crowsnest installation instructions](https://crowsnest.mainsail.xyz/configuration/sample-config))
+ - SSH into your Raspberry Pi 
  - Use KIAUH to install Crowsnest by using the following command. ```./kiauh/kiauh.sh```
  - Install Crowsnest using KIAUH; to choose an action, simply type the corresponding number into the "Perform action" prompt and confirm by hitting ENTER
  - Crowsnest installation may take a few minutes to complete, if it prompts you for any decisions like asking for configuring the update manager in moonraker.conf; Select Yes and proceed with installation.
  - At the end of the installation, you can see a message indicating the process's success.
  - Do a hard restart of the entire printer (flip the power switch on the back), wait ~30seconds, then turn it back on
-   
+ - SSH into your Raspberry Pi again and navigate to the crowsnest logfile by running
+```
+cd /home/owner/printer_data/logs/
+less crowsnest.log
+```
+ - Use the ENTER key to navigate through the file until you find the lines with the red underline and circled blue sections like in the image below:
+![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/34cb0d3c-edbb-435c-95b5-504682ca8bf2)
+ - Record the full path to your camera (underlined in red in the image above)
+ - Record the resolution and fps options of your camera (circled in blue in the image above)
+ - Open Mainsail and go to the Machine (wrench) tab
+ - Open the ```crowsnest.conf``` file
+ - This config file is quite short luckily! There are only 8 lines you should adjust
+![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/59e7b66e-1c6e-41ed-bdce-650867ce8235)
+ - Change the name of your camera (line 37 in the image above) to whatever you want but leave the "cam" portion alone as it is required for the configuration to work properly; the default name is [cam 1] but has been changed to [rpiv2.1] in the image above
+ - Change the "mode" (line 38 in the image above) to your desired method but be sure your chosen camera supports that mode
+![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/0610a03f-ff92-4c43-a925-f4a37104f20e)
+ - Change "enable_rtsp" (line 40 in the image above) to ```true``` if you chose ```camera-streamer``` for your mode
+ - Change the "device" location (line 43 in the image above) to the path you recorded earlier from the ```crowsnest.log``` file
+ - Change the "resolution" (line 44 in the image above) to your desired resolution based on the options you recorded earlier fom the ```crowsnest.log``` file
+ - Change the "fps" (line 45 in the image above) to your desired frames per second based on the options you recorded earlier fom the ```crowsnest.log``` file
+ - Click "Save and Restart" to return to the Machine (wrench) tab of Mainsail
+ - Click the settings gears, then the "Webcams" tab, then click "Add Webcam" (NOTE: in the below images the camera has already been added and the "Add Webcam" button is beneath that to the right)
+![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/709ba564-2780-4d10-a902-4f3c59563a93)
+![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/e622f369-3ca4-4482-804a-2634f6fdcced)
+ - Name your webcam whatever you want; it does not have to be the same as in the ```crowsnest.conf``` file
+ - If you chose ```camera-streamer``` for your mode replace the path in the "URL Stream" box which defaults to ```/webcam/?action=stream``` with ```/webcam/webrtc```
+ - Click "Save Webcam"
+ - If you want your webcam view in the Mainsail Dashboard, click the settings gears, then the "Dashboard" tab, then enable "Webcam" for whatever platform you want (desktop, mobile, tablet, or widescreen)
+ - Congratulations! You should now have a live view of your printer!
