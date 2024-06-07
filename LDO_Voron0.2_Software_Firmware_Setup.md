@@ -573,7 +573,11 @@ less crowsnest.log
 ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/709ba564-2780-4d10-a902-4f3c59563a93)
 ![image](https://github.com/mmcnair91/ACEAE-Labs/assets/62910185/e622f369-3ca4-4482-804a-2634f6fdcced)
  - Name your webcam whatever you want; it does not have to be the same as in the ```crowsnest.conf``` file
- - If you chose ```camera-streamer``` for your mode replace the path in the "URL Stream" box which defaults to ```/webcam/?action=stream``` with ```/webcam/webrtc```
+ - If you chose ```camera-streamer``` for your mode, replace the path in the "URL Stream" box which defaults to ```/webcam/?action=stream``` with ```/webcam/webrtc```
+ - If you chose ```camera-streamer``` for your mode, select ```WebRTC (camera-streamer)``` from the drop down menu in the "Service" box
+ - If you chose ```ustreamer``` for your mode leave the path in the "URL Stream" box as the default which should be ```/webcam/?action=stream```
+ - If you chose ```ustreamer``` for your mode, select ```Adaptive MJPEG-Streamer (experimental)``` from the drop down menu in the "Service" box
+ - If you chose ```ustreamer``` for your mode, type your desired frames per second (fps) in the "Target FPS" field this should not exceed the value you put in the ```crowsnest.conf``` file
  - Click "Save Webcam"
  - If you want your webcam view in the Mainsail Dashboard, click the settings gears, then the "Dashboard" tab, then enable "Webcam" for whatever platform you want (desktop, mobile, tablet, or widescreen)
  - Congratulations! You should now have a live view of your printer!
