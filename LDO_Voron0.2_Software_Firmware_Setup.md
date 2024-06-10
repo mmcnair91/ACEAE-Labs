@@ -581,3 +581,18 @@ less crowsnest.log
  - Click "Save Webcam"
  - If you want your webcam view in the Mainsail Dashboard, click the settings gears, then the "Dashboard" tab, then enable "Webcam" for whatever platform you want (desktop, mobile, tablet, or widescreen)
  - Congratulations! You should now have a live view of your printer!
+
+# USB to Print (Requires a functioning display) [adapted from ShiftingTech's github](https://github.com/shiftingtech/Moonraker-loader/tree/main)
+Klipper is designed to run on a network but some of us like to work offline. This modification allows you to save the gcode in the root (base) directory of a usb stick, plug the usb stick into your Raspberry Pi or USB extension cable and then copies all the files in that directory to the virtual SD card set up in the ```Mainsail.cfg``` file. It even shows a "Copy Complete" message on the display when it's done!
+## Software Setup
+ - SSH into your Raspberry Pi
+ - Run the following commands:
+```
+git clone https://github.com/shiftingtech/Moonraker-loader.git
+sudo ln -sf ~/Moonraker-loader/assets/89-moonraker-loader.rules /etc/udev/rules.d 
+sudo ln -sf ~/Moonraker-loader/assets/*.sh /usr/local/sbin
+```
+ - Restart the Raspberry Pi
+ - You should now be able to plug a USB stick/drive/thumbdrive/whatever the kids are calling it these days into a USB port on the Raspberry Pi and all the files should copy over automatically
+ - You can now remove the USB once the "Copy Complete" message displays on your screen
+ - That's it!
