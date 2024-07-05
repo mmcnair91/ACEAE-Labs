@@ -67,7 +67,7 @@ SSH into the printer using Putty (Windows) or terminal (Mac) using the IP addres
    - Note: If the Pico is not powered with 12-24V (via your printer's power supply) Klipper will be unable to communicate with the TMC drivers and the SKR Pico will automatically shut down
    - With the SKR Pico plugged into the Pi via USB-C and the boot jumper installed, press the reset button
    - Mount the SKR Pico to the Raspberry Pi to copy the file (klipper.uf2) over
-   - Run the following commands: ```sudo mount /dev/sda1 /mnt`` then ```sudo cp out/klipper.uf2 /mnt``` then ```sudo umount /mnt```
+   - Run the following commands: ```sudo mount /dev/sda1 /mnt``` then ```sudo cp out/klipper.uf2 /mnt``` then ```sudo umount /mnt```
    - Remove the jumpers that were installed earlier and reset the SKR Pico (see image of the board above if unsure where it is)
    - Run this command to retrieve the USB-ID for the SKR Pico ```ls /dev/serial/by-id```
    - If it has been flashed properly the result should be similar to the one in the image below but your USB-ID will be different, but should start with usb-Klipper-rp2040
