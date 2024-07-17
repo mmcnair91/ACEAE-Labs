@@ -29,7 +29,7 @@ The PID tune is important for tuning the printer for a given hardware configurat
  - This performs a PID calibration routine that will last about 10-15 minutes. The console will not display anything while it is working but you can monitor the progress via the Dashboard temperature graph.
  -  Once finished, type ```SAVE_CONFIG``` which will save the parameters to the ```printer.cfg``` file
  - Set the part cooling fans to 25% in the dashboard or use ```M106 S64``` in the console
- - Run: ```PID_CALIBRATE HEATER=extruder TARGET=245```
+ - Run: ```PID_CALIBRATE HEATER=extruder TARGET=240```
  - This performs a PID calibration routine that will last about 5 minutes. Once finished, type ```SAVE_CONFIG``` which will save the parameters to the ```printer.cfg``` file
 
 ## Bed Leveling
