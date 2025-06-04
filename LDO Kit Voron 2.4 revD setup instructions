@@ -14,7 +14,13 @@ These instructions follow and reference the Voron 2.4revD Assembly Manual
 - For 350mm version: use 10 M3 T-Nuts and 10 M3x8 SHCS skipping every other hole like in the diagram; leave the middle 2 holes empty
 - Page 29: Make sure the DIN rails are perpendicular to the bed mounting rails with the corner brackets; worth noting the DIN rails do not reach all the way to the edges like in the diagrams
 - Skip page 30: get the 4 black Z Drive assembly parts ready
-- Page 31: use the pulley Ji
+- Page 31: use the printed pulley jig to space the pulley from the short end of the shaft or use this nifty trick:
+![Ruler Trick]()
+- tape a ruler to the edge of a table so 33mm is hanging off the table edge
+  - place the end of the shaft against the table and the end of the pulley against the end of the ruler
+  - tighten set screws
+
+
 ## Chaotic Lab CNC Aluminum Parts
  - 
 
