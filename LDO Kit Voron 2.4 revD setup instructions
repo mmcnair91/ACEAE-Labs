@@ -17,8 +17,8 @@ These instructions follow and reference the Voron 2.4revD Assembly Manual
 - Page 31: use the printed pulley jig to space the pulley from the short end of the shaft or use this nifty trick:
 ![Ruler Trick]()
 - tape a ruler to the edge of a table so 33mm is hanging off the table edge
-  - place the end of the shaft against the table and the end of the pulley against the end of the ruler
-  - tighten set screws
+- place the end of the shaft against the table and the end of the pulley against the end of the ruler
+- tighten set screws
 
 
 ## Chaotic Lab CNC Aluminum Parts
@@ -261,7 +261,7 @@ The PID tune is important for tuning the printer for a given hardware configurat
  - Move the nozzle to the center of the bed and approximately 5-10mm above the bed surface
  - Run: ```PID_CALIBRATE HEATER=heater_bed TARGET=100```
  - This performs a PID calibration routine that will last about 10-15 minutes. The console will not display anything while it is working but you can monitor the progress via the Dashboard temperature graph.
- -  Once finished, type ```SAVE_CONFIG``` which will save the parameters to the ```printer.cfg``` file
+ - Once finished, type ```SAVE_CONFIG``` which will save the parameters to the ```printer.cfg``` file
  - Set the part cooling fans to 25% in the dashboard or use ```M106 S64``` in the console
  - Run: ```PID_CALIBRATE HEATER=extruder TARGET=245```
  - This performs a PID calibration routine that will last about 5 minutes. Once finished, type ```SAVE_CONFIG``` which will save the parameters to the ```printer.cfg``` file
