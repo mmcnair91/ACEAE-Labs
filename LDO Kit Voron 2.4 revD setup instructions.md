@@ -8,40 +8,71 @@ The PxT Lab upgrades included:
 - Clicky Clacky Door kit (Fabreeko)
 
 ## Printing Parts
-If using all of the above upgrades you can skip printing the following parts (listed in the order they appear in the manual; https://github.com/VoronDesign/Voron-2/tree/Voron2.4/STLs/...):
-- Z_Drive/Z_Drive_main_a_x2
-- Z_Drive/Z_Drive_main_b_x2
-- Z_Drive/z_drive_retainer_a_x2
-- Z_Drive/z_drive_retainer_b_x2
-- Z_Drive/[a]_z_drive_baseplate_a_x2
-- Z_Drive/[a]_z_drive_baseplate_b_x2
-- Z_Drive/z_motor_mount_a_x2
-- Z_Drive/z_motor_mount_b_x2
-- Z_Drive/[a]_z_drive_tensioner_a_x2
-- Z_Drive/[a]_z_drive_tensioner_b_x2
-- Z_Idlers/z_tensioner_bracket_a_x2
-- Z_Idlers/z_tensioner_bracket_b_x2
-- Z_Idlers/[a]_z_tensioner_9mm_x4
-- Gantry/Front_Idlers/[a]_tensioner_right
-- Gantry/Front_Idlers/front_idler_right_lower
-- Gantry/Front_Idlers/front_idler_right_upper
-- Gantry/Front_Idlers/[a]_tensioner_left
-- Gantry/Front_Idlers/front_idler_left_upper
-- Gantry/Front_Idlers/front_idler_left_lower
-- Gantry/AB_Drive_Units/a_drive_frame_lower
-- Gantry/AB_Drive_Units/a_drive_frame_upper
-- Gantry/AB_Drive_Units/b_drive_frame_upper
-- Gantry/AB_Drive_Units/b_drive_frame_lower
-- Gantry/xy_joint_left_lower_MGN12
-- Gantry/X_Axis/XY_Joints/xy_joint_left_lower_MGN12
-- Gantry/X_Axis/XY_Joints/xy_joint_right_lower_MGN12
-- Gantry/X_Axis/XY_Joints/xy_joint_right_upper_MGN12
-- Gantry/X_Axis/XY_Joints/xy_joint_left_upper_MGN12
-- Gantry/X_Axis/X_Carriage/x_frame_V2TR_MGN12_left
-- Gantry/X_Axis/X_Carriage/x_frame_V2TR_MGN12_right
+If using all of the above upgrades you can skip printing the following parts (listed in the order they appear in the manual; https://github.com/VoronDesign/Voron-2/tree/Voron2.4/STLs/...:
+- Z_Drive/Z_Drive_main_a_x2.stl
+- Z_Drive/Z_Drive_main_b_x2.stl
+- Z_Drive/z_drive_retainer_a_x2.stl
+- Z_Drive/z_drive_retainer_b_x2.stl
+- Z_Drive/[a]_z_drive_baseplate_a_x2.stl
+- Z_Drive/[a]_z_drive_baseplate_b_x2.stl
+- Z_Drive/z_motor_mount_a_x2.stl
+- Z_Drive/z_motor_mount_b_x2.stl
+- Z_Drive/[a]_z_drive_tensioner_a_x2.stl
+- Z_Drive/[a]_z_drive_tensioner_b_x2.stl
+- Z_Idlers/z_tensioner_bracket_a_x2.stl
+- Z_Idlers/z_tensioner_bracket_b_x2.stl
+- Z_Idlers/[a]_z_tensioner_9mm_x4.stl
+- Gantry/Front_Idlers/[a]_tensioner_right.stl
+- Gantry/Front_Idlers/front_idler_right_lower.stl
+- Gantry/Front_Idlers/front_idler_right_upper.stl
+- Gantry/Front_Idlers/[a]_tensioner_left.stl
+- Gantry/Front_Idlers/front_idler_left_upper.stl
+- Gantry/Front_Idlers/front_idler_left_lower.stl
+- Gantry/AB_Drive_Units/a_drive_frame_lower.stl
+- Gantry/AB_Drive_Units/a_drive_frame_upper.stl
+- Gantry/AB_Drive_Units/b_drive_frame_upper.stl
+- Gantry/AB_Drive_Units/b_drive_frame_lower.stl
+- Gantry/xy_joint_left_lower_MGN12.stl
+- Gantry/X_Axis/XY_Joints/xy_joint_left_lower_MGN12.stl
+- Gantry/X_Axis/XY_Joints/xy_joint_right_lower_MGN12.stl
+- Gantry/X_Axis/XY_Joints/xy_joint_right_upper_MGN12.stl
+- Gantry/X_Axis/XY_Joints/xy_joint_left_upper_MGN12.stl
+- Gantry/X_Axis/X_Carriage/x_frame_V2TR_MGN12_left.stl
+- Gantry/X_Axis/X_Carriage/x_frame_V2TR_MGN12_right.stl
 
-
-
+Additionally you will have to print the following parts:
+- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/motor_plate.stl
+- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/main_body.stl
+- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/[a]_latch_shuttle.stl
+- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/[a]_latch.stl
+- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/[a]_guidler_a.stl
+- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/[a]_guidler_b.stl
+- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/chain_anchor_2hole.stl
+- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/[a]_pcb_spacer.stl
+- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Printheads/Stealthburner_printhead_revo_voron_front.stl
+- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Printheads/Stealthburner_printhead_revo_voron_rear_cw2.stl
+- https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/nozzle_probe_ldo.stl
+- https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/bed_wago_mount.stl
+- https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/led_fan_pcb_spacer_x2.stl
+- https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/LDOSBCW2MountCover/Stealthburner_CW2_LDOPCB.3mf
+- https://github.com/MotorDynamicsLab/Nitehawk-SB/blob/master/STLs/cw2_captive_pcb_cover.stl
+- https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/nozzle_probe_ldo.stl
+- https://github.com/MotorDynamicsLab/LDOVoronTrident/blob/master/STLs/bed_wago_mount.stl
+- https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/led_fan_pcb_spacer_x2.stl
+- https://github.com/VoronDesign/VoronUsers/blob/main/printer_mods/eddie/LED_Bar_Clip/LED_Bar_Clip_Misumi_version2.stl
+- https://github.com/MotorDynamicsLab/LDOVoronTrident/tree/master/STLs/BTT%20Pi%20TFT4.3%20Mount.stl
+- [BTT Touchscreen Mount](https://github.com/MotorDynamicsLab/LDOVoronTrident/blob/master/STLs/BTT%20Pi%20TFT4.3%20Mount/mount_thick.stl)
+- [LDO Zbelt cover a LED](https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/z_belt_cover_a_led.stl)
+- [ClickyClacky Panel Clip](https://github.com/tanaes/whopping_Voron_mods/tree/main/clickyclacky_door/STLs/Panel_Clip.stl)
+- [ClickyClacky Handle-Hinge_Bottom](https://github.com/tanaes/whopping_Voron_mods/tree/main/clickyclacky_door/STLs/Handle-Hinge_Bottom)
+- [ClickyClacky Handle-Hinge_Top](https://github.com/tanaes/whopping_Voron_mods/tree/main/clickyclacky_door/STLs/Handle-Hinge_Top.stl)
+- [ClickyClacky Handle](https://github.com/tanaes/whopping_Voron_mods/tree/main/clickyclacky_door/STLs/Handle.stl)
+- [ClickyClacky Hinge-L-sleeve-2x](https://github.com/tanaes/whopping_Voron_mods/tree/main/clickyclacky_door/STLs/Hinge-L-sleeve-2x.stl)
+- [ClickyClacky Hinge-L-solid-2x](https://github.com/tanaes/whopping_Voron_mods/tree/main/clickyclacky_door/STLs/Hinge-L-solid-2x.stl)
+- [ClickyClacky 
+Latch](https://github.com/tanaes/whopping_Voron_mods/tree/main/clickyclacky_door/STLs/Latch.stl)
+- [LDO Exhaust Cover](https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/exhaust_cover.stl)
+- [LDO Brush Holder Sheet Stop](https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/Purge%20Bucket/brush_holder_sheet_stop.stl)
 
 ## The Build
 These instructions follow and reference the Voron 2.4revD Assembly Manual
