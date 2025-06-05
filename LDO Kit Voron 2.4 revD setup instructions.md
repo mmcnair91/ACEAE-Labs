@@ -7,18 +7,83 @@ The PxT Lab upgrades included:
 - Titanium backer rails
 - Clicky Clacky Door kit (Fabreeko)
 
+## Printing Parts
+If using all of the above upgrades you can skip printing the following parts (listed in the order they appear in the manual; https://github.com/VoronDesign/Voron-2/tree/Voron2.4/STLs/...):
+- Z_Drive/Z_Drive_main_a_x2
+- Z_Drive/Z_Drive_main_b_x2
+- Z_Drive/z_drive_retainer_a_x2
+- Z_Drive/z_drive_retainer_b_x2
+- Z_Drive/[a]_z_drive_baseplate_a_x2
+- Z_Drive/[a]_z_drive_baseplate_b_x2
+- Z_Drive/z_motor_mount_a_x2
+- Z_Drive/z_motor_mount_b_x2
+- Z_Drive/[a]_z_drive_tensioner_a_x2
+- Z_Drive/[a]_z_drive_tensioner_b_x2
+- Z_Idlers/z_tensioner_bracket_a_x2
+- Z_Idlers/z_tensioner_bracket_b_x2
+- Z_Idlers/[a]_z_tensioner_9mm_x4
+- Gantry/Front_Idlers/[a]_tensioner_right
+- Gantry/Front_Idlers/front_idler_right_lower
+- Gantry/Front_Idlers/front_idler_right_upper
+- Gantry/Front_Idlers/[a]_tensioner_left
+- Gantry/Front_Idlers/front_idler_left_upper
+- Gantry/Front_Idlers/front_idler_left_lower
+- Gantry/AB_Drive_Units/a_drive_frame_lower
+- Gantry/AB_Drive_Units/a_drive_frame_upper
+- Gantry/AB_Drive_Units/b_drive_frame_upper
+- Gantry/AB_Drive_Units/b_drive_frame_lower
+- Gantry/xy_joint_left_lower_MGN12
+- Gantry/X_Axis/XY_Joints/xy_joint_left_lower_MGN12
+- Gantry/X_Axis/XY_Joints/xy_joint_right_lower_MGN12
+- Gantry/X_Axis/XY_Joints/xy_joint_right_upper_MGN12
+- Gantry/X_Axis/XY_Joints/xy_joint_left_upper_MGN12
+- Gantry/X_Axis/X_Carriage/x_frame_V2TR_MGN12_left
+- Gantry/X_Axis/X_Carriage/x_frame_V2TR_MGN12_right
+
+
+
+
+## The Build
 These instructions follow and reference the Voron 2.4revD Assembly Manual
 - When building the frame use a spare piece of extrusion to ensure the corners are flush against each other or use a builder's square
 - Follow Instructions until page 24
+
+### Z Drives
 - Be sure to grease your linear rails extremely well at this point!
 - For 350mm version: use 10 M3 T-Nuts and 10 M3x8 SHCS skipping every other hole like in the diagram; leave the middle 2 holes empty
 - Page 29: Make sure the DIN rails are perpendicular to the bed mounting rails with the corner brackets; worth noting the DIN rails do not reach all the way to the edges like in the diagrams
 - Skip page 30: get the 4 black Z Drive assembly parts ready
 - Page 31: use the printed pulley jig to space the pulley from the short end of the shaft or use this nifty trick:
-![Ruler Trick]()
+![RulerTrick](https://github.com/user-attachments/assets/be0f2b34-5299-4d71-a9b7-1f84603d55e5)
 - tape a ruler to the edge of a table so 33mm is hanging off the table edge
 - place the end of the shaft against the table and the end of the pulley against the end of the ruler
 - tighten set screws
+- Page 33: for the M5 shims use the brass washers; Assemble the Belt Drive Assembly from right to left but stop after the 4th and final M5 shim
+- Insert the GT2 80 Tooth Pulley with the GT2 188mm Belt Loop pre-installed into the black Z Drive assembly pieces
+- Slot the Belt Drive assembly through the black Z Drive assembly piece and through the 80 Tooth Pulley
+- Install the final 625 bearing to keep everything in place
+- Tighten the set screws  in the 80 Tooth Pulley being sure one of them is flush with the flattened surface of the shaft
+- Repeat the previous 4 steps for each of the black Z Drive Assembly pieces (3 more)
+- Skip pages 34-37
+- Repeat pages 38 and 39 so you have two motors with the L bracket facing like in the picture relative to the wires on the motor and two motors with the L being backwards relative to the wires on the motor; another way to explain this is that the motor wires should be facing towards the middle of the printer once mounted
+- Page 41: use the M5 T-Nuts and M5x14 SHCS screws supplied with the CNC'ed parts to attach the black Z Drive Assemblies (tighten them down!); pay attention to how the corner of this part and the frame corner line up now rather than having to undo it later
+- Page 42-45: follow as written; the accent part is in the CNC'ed parts kit; arguably one of the coolest engineering designs on the printer
+- Page 45: Use whichever foot you prefer (LDO kit or CNC'ed parts kit)
+- Page 48: Undo the horizontal screw going through the red accent part to install the GT2 20 Tooth Idler (9mm wide) on each Z idler
+- Use the M5 T-Nuts and M5x40 SHCS supplied with the CNC'ed Z Idlers to mount them
+### Print Bed
+- Skip pages 53-57 if your kit came from Fabreeko
+- Skinny part of the M4 Thumb Nuts faces up
+- Page 59: Snug all the screws up; tighten down one hard then loosen the other three so they are just barely snug
+### AB Drives & Idlers
+- The A and B idlers come fully assembled
+- Skip pages 64-72
+- Page 73: the part pictured is the right upper part from the CNC'ed parts; use the M3x25 SHCS supplied instead of the stated M5x30 BHCS
+- Page 74: CNC'ed parts use the red shafts with the collar in the middle for the F695 bearing stacks and no washers/shims; you almost can't overtighten these if using a the supplied hex wrench
+- Page 76: use the M3x30 SHCS supplied with the CNC'ed parts
+- Page 77: the part pictured is the left upper part from the CNC'ed parts; use the M3x25 SHCS supplied instead of the stated M5x30 BHCS
+- Page 78: CNC'ed parts use the red shafts with the collar in the middle for the F695 bearing stacks and no washers/shims; you almost can't overtighten these if using a the supplied hex wrench
+- Page 80: use the M3x30 SHCS supplied with the CNC'ed parts
 
 
 ## Chaotic Lab CNC Aluminum Parts
