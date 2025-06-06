@@ -40,28 +40,25 @@ If using all of the above upgrades you can skip printing the following parts (li
 - Gantry/X_Axis/X_Carriage/x_frame_V2TR_MGN12_left.stl
 - Gantry/X_Axis/X_Carriage/x_frame_V2TR_MGN12_right.stl
 
-Additionally you will have to print the following parts:
-- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/motor_plate.stl
-- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/main_body.stl
-- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/[a]_latch_shuttle.stl
-- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/[a]_latch.stl
-- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/[a]_guidler_a.stl
-- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/[a]_guidler_b.stl
-- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/chain_anchor_2hole.stl
-- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/[a]_pcb_spacer.stl
-- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Printheads/Stealthburner_printhead_revo_voron_front.stl
-- https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Printheads/Stealthburner_printhead_revo_voron_rear_cw2.stl
-- https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/nozzle_probe_ldo.stl
-- https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/bed_wago_mount.stl
-- https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/led_fan_pcb_spacer_x2.stl
-- https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/LDOSBCW2MountCover/Stealthburner_CW2_LDOPCB.3mf
-- https://github.com/MotorDynamicsLab/Nitehawk-SB/blob/master/STLs/cw2_captive_pcb_cover.stl
-- https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/nozzle_probe_ldo.stl
-- https://github.com/MotorDynamicsLab/LDOVoronTrident/blob/master/STLs/bed_wago_mount.stl
-- https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/led_fan_pcb_spacer_x2.stl
-- https://github.com/VoronDesign/VoronUsers/blob/main/printer_mods/eddie/LED_Bar_Clip/LED_Bar_Clip_Misumi_version2.stl
-- https://github.com/MotorDynamicsLab/LDOVoronTrident/tree/master/STLs/BTT%20Pi%20TFT4.3%20Mount.stl
-- [BTT Touchscreen Mount](https://github.com/MotorDynamicsLab/LDOVoronTrident/blob/master/STLs/BTT%20Pi%20TFT4.3%20Mount/mount_thick.stl)
+Additionally you will have to print the following parts; the filenames include color ([a]=accent; filename=primary) and quantity (eg: x2; filename=1) required:
+- [Stealthburner Extruder+ Clockwork 2 motor_plate](https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/motor_plate.stl)
+- [Stealthburner Extruder+ Clockwork 2 main_body](https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/main_body.stl)
+- [Stealthburner Extruder+ Clockwork 2 latch shuttle](https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/[a]_latch_shuttle.stl)
+- [Stealthburner Extruder+ Clockwork 2 latch](https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/[a]_latch.stl)
+- [Stealthburner Extruder+ Clockwork 2 guidler_a](https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/[a]_guidler_a.stl)
+- [Stealthburner Extruder+ Clockwork 2 guidler_b](https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/Direct_Drive/[a]_guidler_b.stl)
+- [Stealthburner Extruder+ Clockwork 2 chain anchor 2hole](https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/chain_anchor_2hole.stl)
+- [Stealthburner Extruder+ Clockwork 2 pcb spacer](https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Clockwork2/[a]_pcb_spacer.stl)
+- [Stealthburner Extruder+ Clockwork 2 revo voron front](https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Printheads/Stealthburner_printhead_revo_voron_front.stl)
+- [Stealthburner Extruder+ Clockwork 2 revo voron rear cw2](https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner/Printheads/Stealthburner_printhead_revo_voron_rear_cw2.stl)
+- [LDO nozzle_probe](https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/nozzle_probe_ldo.stl)
+- [LDO bed_wago_mount](https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/bed_wago_mount.stl)
+- [LDO led_fan_pcb_spacer_x2](https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/led_fan_pcb_spacer_x2.stl)
+- [LDO Stealthburner_CW2_LDOPCB](https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/LDOSBCW2MountCover/Stealthburner_CW2_LDOPCB.3mf)
+- [LDO cw2_captive_pcb_cover](https://github.com/MotorDynamicsLab/Nitehawk-SB/blob/master/STLs/cw2_captive_pcb_cover.stl)
+- [LED_Bar_Clip_Misumi_version2](https://github.com/VoronDesign/VoronUsers/blob/main/printer_mods/eddie/LED_Bar_Clip/LED_Bar_Clip_Misumi_version2.stl)
+- [LDO BTT_Screen_cover](https://github.com/MotorDynamicsLab/LDOVoronTrident/tree/master/STLs/BTT%20Pi%20TFT4.3%20Mount.stl)
+- [LDO BTT_Touchscreen_Mount](https://github.com/MotorDynamicsLab/LDOVoronTrident/blob/master/STLs/BTT%20Pi%20TFT4.3%20Mount/mount_thick.stl)
 - [LDO Zbelt cover a LED](https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/z_belt_cover_a_led.stl)
 - [ClickyClacky Panel Clip](https://github.com/tanaes/whopping_Voron_mods/tree/main/clickyclacky_door/STLs/Panel_Clip.stl)
 - [ClickyClacky Handle-Hinge_Bottom](https://github.com/tanaes/whopping_Voron_mods/tree/main/clickyclacky_door/STLs/Handle-Hinge_Bottom)
@@ -105,6 +102,7 @@ These instructions follow and reference the Voron 2.4revD Assembly Manual
 ### Print Bed
 - Skip pages 53-57 if your kit came from Fabreeko
 - Skinny part of the M4 Thumb Nuts faces up
+- Use M3x20 instead of M3x16 as stated in the manual
 - Page 59: Snug all the screws up; tighten down one hard then loosen the other three so they are just barely snug
 ### AB Drives & Idlers
 - The A and B idlers come fully assembled
@@ -115,7 +113,9 @@ These instructions follow and reference the Voron 2.4revD Assembly Manual
 - Page 77: the part pictured is the left upper part from the CNC'ed parts; use the M3x25 SHCS supplied instead of the stated M5x30 BHCS
 - Page 78: CNC'ed parts use the red shafts with the collar in the middle for the F695 bearing stacks and no washers/shims; you almost can't overtighten these if using a the supplied hex wrench
 - Page 80: use the M3x30 SHCS supplied with the CNC'ed parts
-
+## Gantry
+- Page 84: LDO kits use the 2 hole version. Unfortunately, the Chaotic Lab CNC'ed part has the 3 hole style so it won't work unless you buy additional cable chains or print a replacement end piece
+- Page 86: with CNC'ed parts replace the bottom-inner M5x10 with an M3x10 for the A & B idlers
 
 ## Chaotic Lab CNC Aluminum Parts
  - 
