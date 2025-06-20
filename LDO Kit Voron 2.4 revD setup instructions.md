@@ -6,6 +6,8 @@ The PxT Lab upgrades included:
 - Full Nevermore
 - Titanium backer rails
 - Clicky Clacky Door kit (Fabreeko)
+- Below Extrusion LED bars
+- Extrusion covers for all remaining open extrusions
 
 ## Printing Parts
 If using all of the above upgrades you can skip printing the following parts (listed in the order they appear in the manual; https://github.com/VoronDesign/Voron-2/tree/Voron2.4/STLs/...:
@@ -56,7 +58,6 @@ Additionally you will have to print the following parts; the filenames include c
 - [LDO led_fan_pcb_spacer_x2](https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/led_fan_pcb_spacer_x2.stl)
 - [LDO Stealthburner_CW2_LDOPCB](https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/LDOSBCW2MountCover/Stealthburner_CW2_LDOPCB.3mf)
 - [LDO cw2_captive_pcb_cover](https://github.com/MotorDynamicsLab/Nitehawk-SB/blob/master/STLs/cw2_captive_pcb_cover.stl)
-- [LED_Bar_Clip_Misumi_version2](https://github.com/VoronDesign/VoronUsers/blob/main/printer_mods/eddie/LED_Bar_Clip/LED_Bar_Clip_Misumi_version2.stl)
 - [LDO BTT_Screen_cover](https://github.com/MotorDynamicsLab/LDOVoronTrident/tree/master/STLs/BTT%20Pi%20TFT4.3%20Mount.stl)
 - [LDO BTT_Touchscreen_Mount](https://github.com/MotorDynamicsLab/LDOVoronTrident/blob/master/STLs/BTT%20Pi%20TFT4.3%20Mount/mount_thick.stl)
 - [LDO Zbelt cover a LED](https://github.com/MotorDynamicsLab/LDOVoron2/blob/main/STLs/z_belt_cover_a_led.stl)
@@ -115,7 +116,10 @@ These instructions follow and reference the Voron 2.4revD Assembly Manual
 - Page 80: use the M3x30 SHCS supplied with the CNC'ed parts
 ## Gantry
 - Page 84: LDO kits use the 2 hole version. Unfortunately, the Chaotic Lab CNC'ed part has the 3 hole style so it won't work unless you buy additional cable chains or print a replacement end piece
-- Page 86: with CNC'ed parts replace the bottom-inner M5x10 with an M3x10 for the A & B idlers
+- Page 86-87: with CNC'ed parts replace the bottom-inner M5x10 with an M3x10 for the A & B idlers
+- Page 91-95: all printed parts will be replaced with CNC'ed parts
+- Page 96: skip
+- Pages 97-100: use the provided CNC'ed parts to create the bearing and idler stacks; it is important to note that the red and black shaft parts are slightly different from each other.
 
 ## Chaotic Lab CNC Aluminum Parts
  - 
